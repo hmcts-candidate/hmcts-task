@@ -10,6 +10,8 @@ This project uses [Playwright](https://playwright.dev/) for end-to-end testing. 
 ### 1. Install Dependencies
 ```sh
 npm install
+
+npx playwright install
 ```
 
 ### 2. Environment Configuration (found in environments folder)
@@ -27,15 +29,21 @@ BASE_URL=https://your-production-url.com
 ```
 
 ### 3. Running Tests
-- **Default (uses `./environments/.env`):**
-  ```sh
-  npx playwright test
-  ```
+
 - **Development (uses `./environments/.env.development`):**
   ```sh
   NODE_ENV=development npx playwright test
   ```
-
+  
+- **Development with UI (uses `./environments/.env.development`):**
+  ```sh
+  NODE_ENV=development npx playwright test --ui
+  ```
+- **Default (uses `./environments/.env`):**
+  ```sh
+  npx playwright test
+  ```
+  
 ### 4. Tracing: Enable, Disable, and View
 
 Playwright tracing helps you debug test failures by recording browser actions, network, and DOM snapshots.
